@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>CTF Level 1</title>
+  <style>
+    body { background: #111; color: #fff; font-family: sans-serif; padding: 20px; }
+    h1 { color: #00ffc8; }
+    input, button { width: 100%; padding: 10px; margin-top: 10px; font-size: 16px; }
+    input { background: #222; color: #fff; border: 1px solid #00ffc8; }
+    button { background: #00ffc8; color: #000; font-weight: bold; border: none; }
+  </style>
+</head>
+<body>
+  <h1>🔐 Level 1 - Decode Base64</h1>
+  <p>Decode kode berikut dan masukkan hasilnya:</p>
+  <code>Q1RGe3VuTG9ja19rb2RlfQ==</code>
+  <input type="text" id="flag" placeholder="CTF{...}">
+  <button onclick="cek()">Kirim</button>
+
+  <script>
+    function cek() {
+      const jawaban = document.getElementById("flag").value.trim();
+      if (jawaban === "CTF{unlock_kode}") {
+        alert("✅ Benar! Menuju Level 2...");
+        window.location.href = "2.html";
+      } else {
+        alert("❌ Salah. Hint: Base64 decoder online.");
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>CTF Level 5</title>
+  <style>
+    body { background: #111; color: #fff; font-family: sans-serif; padding: 20px; }
+    h1 { color: #00ffc8; }
+    input, button { width: 100%; padding: 10px; margin-top: 10px; font-size: 16px; }
+    input { background: #222; color: #fff; border: 1px solid #00ffc8; }
+    button { background: #00ffc8; color: #000; font-weight: bold; border: none; }
+  </style>
+</head>
+<body>
+  <h1>🔐 Level 5 - Hidden in Cookie</h1>
+  <p>Flag disimpan dalam cookie halaman ini. Bisa kamu temukan?</p>
+  <input type="text" id="flag" placeholder="CTF{...}">
+  <button onclick="cek()">Kirim</button>
+
+  <script>
+    document.cookie = "flag=CTF{cookie_found_it}; path=/";
+    function cek() {
+      const jawaban = document.getElementById("flag").value.trim();
+      if (jawaban === "CTF{cookie_found_it}") {
+        alert("🎉 Selamat! Kamu menyelesaikan semua level!");
+      } else {
+        alert("❌ Coba cek cookie lewat Inspect → Application → Cookies");
+      }
+    }
+  </script>
+</body>
+</html>

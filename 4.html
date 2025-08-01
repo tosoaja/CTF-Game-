@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>CTF Level 4</title>
+  <style>
+    body { background: #111; color: #fff; font-family: sans-serif; padding: 20px; }
+    h1 { color: #00ffc8; }
+    input, button { width: 100%; padding: 10px; margin-top: 10px; font-size: 16px; }
+    input { background: #222; color: #fff; border: 1px solid #00ffc8; }
+    button { background: #00ffc8; color: #000; font-weight: bold; border: none; }
+  </style>
+</head>
+<body>
+  <h1>🔐 Level 4 - Secret url</h1>
+  <p>decode code di bawah menggunakan base64, lalu masuk ke url yg di berikan</p>
+  <br>aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL
+  3Rvc29hamEva2V5L3JlZnMvaGVhZHMvbWFpbi9JTUctMjAyNTA4MDEtV0Ew
+  MTEwLmpwZw== </br>
+  <input type="text" id="flag" placeholder="CTF{...}">
+  <button onclick="cek()">Kirim</button>
+
+  <script>
+    console.log("Flag: CTF{console_secret}");
+    function cek() {
+      const jawaban = document.getElementById("flag").value.trim();
+      if (jawaban === "CTF{xxshxh}") {
+        alert("✅ Benar! Menuju Level 5...");
+        window.location.href = "5.html";
+      } else {
+        alert("❌ Decode menggunakan base64'");
+      }
+    }
+  </script>
+</body>
+</html>

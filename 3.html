@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>CTF Level 3</title>
+  <style>
+    body { background: #111; color: #fff; font-family: sans-serif; padding: 20px; }
+    h1 { color: #00ffc8; }
+    input, button { width: 100%; padding: 10px; margin-top: 10px; font-size: 16px; }
+    input { background: #222; color: #fff; border: 1px solid #00ffc8; }
+    button { background: #00ffc8; color: #000; font-weight: bold; border: none; }
+  </style>
+</head>
+<body>
+  <h1>🔐 Level 3 - Secret web</h1>
+  <p>Decode code di bawah ini menggunakan base64 lalu masuk ke web untuk menemukan key nya<p/> <p>aHR0cHM6Ly9rZXktamFkZS52ZXJjZWwuYXBw</p>
+  
+  <input type="text" id="flag" placeholder="CTF{...}">
+  <button onclick="cek()">Kirim</button>
+
+  <!-- flag = CTF{Selanjutnya} -->
+
+  <script>
+    function cek() {
+      const jawaban = document.getElementById("flag").value.trim();
+      if (jawaban === "CTF{xxvsh}") {
+        alert("✅ Benar! Menuju Level 4...");
+        window.location.href = "4.html";
+      } else {
+        alert("❌ Masih salah. Coba decode code nya lalu masuk ke web lain untuk melanjutkan'.");
+      }
+    }
+  </script>
+</body>
+</html>
