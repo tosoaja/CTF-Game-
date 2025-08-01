@@ -57,6 +57,7 @@
       const jawaban = document.getElementById("flag").value.trim();
       if (jawaban === "CTF{cookie_found_it}") {
         alert("🎉 Selamat! Kamu menyelesaikan semua level!");
+        window.location.href = "selesai.html";
       } else {
         alert("❌ Salah. Coba cek cookie lewat Inspect → Application → Cookies");
       }
