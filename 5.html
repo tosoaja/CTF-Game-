@@ -51,11 +51,11 @@
 
   <script>
     // Set cookie
-    document.cookie = "flag=CTF{cookie_found_it}; path=/";
+    document.cookie = "flag=CTF{Selesai}; path=/";
 
     function cek() {
       const jawaban = document.getElementById("flag").value.trim();
-      if (jawaban === "CTF{cookie_found_it}") {
+      if (jawaban === "CTF{Selesai}") {
         alert("🎉 Selamat! Kamu menyelesaikan semua level!");
         window.location.href = "selesai.html";
       } else {
