@@ -3,29 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <title>CTF Level 5</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    body { background: #111; color: #fff; font-family: sans-serif; padding: 20px; }
+    body {
+      background: #111;
+      color: #fff;
+      font-family: sans-serif;
+      padding: 20px;
+      text-align: center;
+    }
     h1 { color: #00ffc8; }
-    input, button { width: 100%; padding: 10px; margin-top: 10px; font-size: 16px; }
-    input { background: #222; color: #fff; border: 1px solid #00ffc8; }
-    button { background: #00ffc8; color: #000; font-weight: bold; border: none; }
+    input, button {
+      width: 90%;
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+    input {
+      background: #222;
+      color: #fff;
+      border: 1px solid #00ffc8;
+    }
+    button {
+      background: #00ffc8;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+    #hint-box {
+      margin-top: 25px;
+      font-family: monospace;
+      color: #00ffcc;
+      word-break: break-all;
+    }
   </style>
 </head>
 <body>
-  <h1>🔐 Level 5 - Hidden in Cookie</h1>
-  <p>Flag disimpan dalam cookie halaman ini. Bisa kamu temukan?</p>
+  <h1>🔐 Level 5 - Hidden in Url</h1>
+  <p>Flag disimpan dalam code halaman ini. Bisa kamu temukan?</p>
+
   <input type="text" id="flag" placeholder="CTF{...}">
   <button onclick="cek()">Kirim</button>
+  <button onclick="tampilkanPetunjuk()">Petunjuk</button>
+
+  <div id="hint-box"></div>
 
   <script>
+    // Set cookie
     document.cookie = "flag=CTF{cookie_found_it}; path=/";
+
     function cek() {
       const jawaban = document.getElementById("flag").value.trim();
       if (jawaban === "CTF{cookie_found_it}") {
         alert("🎉 Selamat! Kamu menyelesaikan semua level!");
       } else {
-        alert("❌ Coba cek cookie lewat Inspect → Application → Cookies");
+        alert("❌ Salah. Coba cek cookie lewat Inspect → Application → Cookies");
       }
+    }
+
+    function tampilkanPetunjuk() {
+      const hint = "aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL3Rvc29hamEvQ1RGLUdhbWUtL3JlZnMvaGVhZHMvbWFpbi94eXp6eg=";
+      document.getElementById("hint-box").innerText = hint;
     }
   </script>
 </body>
